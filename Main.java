@@ -38,6 +38,43 @@ public class Main {
             intelligence = rollStat();
             wisdom = rollStat();
             charisma = rollStat();
+            hitPoints = calculateHP();
+            armorClass = calculateAC();
+            feats = new ArrayList<>();
+        }
+
+        protected int calculateHP() {
+            return calculateHP(level);
+        }
+
+        private int calculateHP(int level) {
+            if (level <= 1) {
+                return 10 + calculateAbilityModifier(constitution);
+            }
+            return calculateHP(level-1) + (level-1) * (6 + calculateAbilityModifier(constitution));
+        }
+
+        protected int calculateAbilityModifier(int score) {
+            return (score-10)/2; // rounds down because integer division
+        }
+
+        protected int calculateAC() {
+            return 10 + calculateAbilityModifier(dexterity);
+        }
+
+        protected void levelUp() {
+            level+=1;
+            hitPoints = calculateHP();
+            armorClass = calculateAC();
+        }
+
+        protected void addFeat(String feat) {
+            feats.add(feat);
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
 }
