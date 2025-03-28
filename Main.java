@@ -1,7 +1,13 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
-    public class Character {
+    public static void main(String[] args) {
+        Character test = new Character("amongus", 8);
+        System.out.println(test.toString());
+    }
+
+    public static class Character {
         protected int strength;
         protected int dexterity;
         protected int constitution;
@@ -68,13 +74,28 @@ public class Main {
             armorClass = calculateAC();
         }
 
+        protected int rollStat() {
+            Random rand = new Random();
+            int stat = 0;
+            for (int i=0; i<3; i++) {
+                stat += rand.nextInt(6) + 1;
+            }
+            return stat;
+        }
+
         protected void addFeat(String feat) {
             feats.add(feat);
         }
 
         @Override
         public String toString() {
-            return super.toString();
+            StringBuilder returnString = new StringBuilder();
+            returnString.append("Character: " + name + " Level: " + level + "\n");
+            returnString.append("HP: " + hitPoints + " | AC: " + armorClass + "\n");
+            returnString.append("STR: " + strength + " | DEX: " + dexterity + " | CON: " + constitution + "\n");
+            returnString.append("INT: " + intelligence + " | WIS: " + wisdom + " | CHA: " + charisma + "\n");
+            returnString.append("Feats: " + feats.toString());
+            return returnString.toString();
         }
     }
 }
