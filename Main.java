@@ -3,8 +3,12 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Character test = new Character("amongus", 8);
+        Character test = new Character("Amongus", 8);
         System.out.println(test.toString());
+        Character test2 = new Character();
+        System.out.println(test2);
+        Barbarian test3 = new Barbarian();
+        System.out.println(test3);
     }
 
     public static class Character {
