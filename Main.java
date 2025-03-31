@@ -96,4 +96,244 @@ public class Main {
                     "Feats: " + feats.toString();
         }
     }
+
+    public static class Barbarian extends Character {
+
+        public Barbarian() {
+            super();
+            add_bonuses();
+        }
+
+        public  Barbarian(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            strength+=2;
+            constitution+=1;
+            addFeat("Rage");
+            addFeat("Unarmored Defense");
+        }
+    }
+
+    public static class Bard extends Character {
+
+        public Bard() {
+            super();
+            add_bonuses();
+        }
+
+        public  Bard(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            charisma+=2;
+            dexterity+=1;
+            addFeat("Inspiration");
+            addFeat("Jack of All Trades");
+        }
+    }
+
+    public static class Cleric extends Character {
+
+        public Cleric() {
+            super();
+            add_bonuses();
+        }
+
+        public Cleric(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            wisdom+=2;
+            constitution+=1;
+            addFeat("Channel Divinity");
+            addFeat("Turn Undead");
+        }
+    }
+
+    public static class Druid extends Character {
+
+        public Druid() {
+            super();
+            add_bonuses();
+        }
+
+        public Druid(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            wisdom+=2;
+            constitution+=1;
+            addFeat("Wild Shape");
+            addFeat("Commune with Nature");
+        }
+    }
+
+    public static class Fighter extends Character {
+
+        public Fighter() {
+            super();
+            add_bonuses();
+        }
+
+        public Fighter(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            dexterity+=2;
+            constitution+=1;
+            addFeat("Action Surge");
+            addFeat("Second Wind");
+        }
+    }
+
+    public static class Monk extends Character {
+
+        public Monk() {
+            super();
+            add_bonuses();
+        }
+
+        public Monk(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            dexterity+=2;
+            wisdom+=1;
+            addFeat("Unarmored Movement");
+            addFeat("Stunning Strike");
+        }
+    }
+
+    public static class Paladin extends Character {
+
+        public Paladin() {
+            super();
+            add_bonuses();
+        }
+
+        public Paladin(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            strength+=2;
+            charisma+=1;
+            addFeat("Divine Smite");
+            addFeat("Aura of Protection");
+        }
+    }
+
+    public static class Ranger extends Character {
+
+        public Ranger() {
+            super();
+            add_bonuses();
+        }
+
+        public Ranger(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            dexterity+=2;
+            intelligence+=1;
+            addFeat("Favored Enemy");
+            addFeat("Surefooted");
+        }
+    }
+
+    public static class Rogue extends Character {
+
+        public Rogue() {
+            super();
+            add_bonuses();
+        }
+
+        public  Rogue(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            dexterity+=2;
+            intelligence+=1;
+            addFeat("Sneak Attack");
+            addFeat("Uncanny Dodge");
+        }
+    }
+
+    public static class Sorcerer extends Character {
+
+        public Sorcerer() {
+            super();
+            add_bonuses();
+        }
+
+        public Sorcerer(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            charisma+=2;
+            constitution+=1;
+            addFeat("Wild Magic");
+            addFeat("Flexible Spellcasting");
+        }
+    }
+
+    public static class Warlock extends Character {
+
+        public Warlock() {
+            super();
+            add_bonuses();
+        }
+
+        public Warlock(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            charisma+=2;
+            constitution+=1;
+            addFeat("Eldritch Patron");
+            addFeat("Pact Magic");
+        }
+    }
+
+    public static class Wizard extends Character {
+
+        public Wizard() {
+            super();
+            add_bonuses();
+        }
+
+        public Wizard(String name, int level) {
+            super(name, level);
+            add_bonuses();
+        }
+
+        private void add_bonuses() {
+            intelligence+=2;
+            constitution+=1;
+            addFeat("Arcane Recovery");
+            addFeat("Spell Mastery");
+        }
+    }
 }
