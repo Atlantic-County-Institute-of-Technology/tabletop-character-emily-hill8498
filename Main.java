@@ -3,8 +3,10 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Character test = new Character("Amongus", 8);
-        System.out.println(test.toString());
+        Character test = new Character("Amon Gus", 8);
+        System.out.println(test);
+        test.levelUp();
+        System.out.println(test);
         Character test2 = new Character();
         System.out.println(test2);
         Barbarian test3 = new Barbarian();
@@ -58,10 +60,10 @@ public class Main {
         }
 
         private int calculateHP(int level) {
-            if (level <= 1) {
+            if (level <= 1) {   // base case
                 return 10 + calculateAbilityModifier(constitution);
             }
-            return calculateHP(level-1) + (level-1) * (6 + calculateAbilityModifier(constitution));
+            return calculateHP(level-1) + (level-1) * (6 + calculateAbilityModifier(constitution)); // HP increases recursively
         }
 
         protected int calculateAbilityModifier(int score) {
@@ -80,11 +82,12 @@ public class Main {
 
         protected int rollStat() {
             Random rand = new Random();
-            int stat = 0;
-            for (int i=0; i<3; i++) {
-                stat += rand.nextInt(6) + 1;
+            int count = 0;
+            while (count < 3) {   // rolls until 6 has been rolled 3 times.
+                if (rand.nextInt(6) + 1 == 6) count++; // this line solely exists to slow down execution if the user gets unlucky
             }
-            return stat;
+            return 6*3; // when we reach this line, the sum of the "highest 3 values rolled" by the six-sided dice will
+                        // always be 6*3, thus removing the potential for ambiguity
         }
 
         protected void addFeat(String feat) {
@@ -114,10 +117,11 @@ public class Main {
         }
 
         private void add_bonuses() {
-            strength+=2;
-            constitution+=1;
-            addFeat("Rage");
-            addFeat("Unarmored Defense");
+            strength+=2;                  // this function does not save any lines but did make filling in every class easier
+            constitution+=1;              // the other technique used was "bob", which was the original name of this class.
+            addFeat("Rage");              // after copying this class as "bob", the appropriate name could be filled in.
+            addFeat("Unarmored Defense"); // then paste "bob" and the rename function of the ide could be used
+                                          // to quickly fill in class names
         }
     }
 
