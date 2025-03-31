@@ -89,13 +89,11 @@ public class Main {
 
         @Override
         public String toString() {
-            StringBuilder returnString = new StringBuilder();
-            returnString.append("Character: " + name + " Level: " + level + "\n");
-            returnString.append("HP: " + hitPoints + " | AC: " + armorClass + "\n");
-            returnString.append("STR: " + strength + " | DEX: " + dexterity + " | CON: " + constitution + "\n");
-            returnString.append("INT: " + intelligence + " | WIS: " + wisdom + " | CHA: " + charisma + "\n");
-            returnString.append("Feats: " + feats.toString());
-            return returnString.toString();
+            return "Character: " + name + " Level: " + level + "\n" +
+                    "HP: " + hitPoints + " | AC: " + armorClass + "\n" +
+                    "STR: " + strength + " | DEX: " + dexterity + " | CON: " + constitution + "\n" +
+                    "INT: " + intelligence + " | WIS: " + wisdom + " | CHA: " + charisma + "\n" +
+                    "Feats: " + feats.toString();
         }
     }
 }
